@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WhatsApp</string>
+    <string name="welcome_text">welcom to whatsApp</string>
+    <string name="creat_account">creat new account</string>
+    <string name="have_account">Already have an account</string>
+    <string name="welcome">welcome to whatsApp</string>
+    <string name="have_account_btn">Already Have An Account</string>
+    <string name="login_lable">Login</string>
+    <string name="enter_email">Please enter your email</string>
+    <string name="creat_new_account">Creat New Account</string>
+    <string name="diplay_name">Display Name</string>
+    <string name="login_input_hint">Plz Enter Your Email</string>
+    <string name="password_input_hint">Enter Your Password</string>
+</resources>
