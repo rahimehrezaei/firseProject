@@ -12,6 +12,10 @@ class SecondActivity : AppCompatActivity() {
         setContentView(bindig.root)
         super.onCreate(savedInstanceState)
 
+        bindig.haveaccountBtn.setOnClickListener{
+            startActivity(Intent(this , LoginActivity::class.java))
+        }
+
         bindig.creataccountBtn.setOnClickListener{
             startActivity(Intent(this,CreatAccountActivity::class.java))
         }

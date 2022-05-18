@@ -3,6 +3,7 @@ package com.example.whatsapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import com.example.whatsapp.databinding.ActivityCreatAccountBinding
 import com.example.whatsapp.databinding.ActivityLoginBinding
@@ -22,8 +23,14 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         binding.loginBtn.setOnClickListener{
+            var email = binding.loginEmail.text.toString()
+            var password = binding.loginPassword.text.toString()
+            if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
+                loginUser(email,password)
+            }else{
+                Toast.makeText(this,"plz enter your information", Toast.LENGTH_LONG).show()
+            }
 
-            //login user comands
 
         }
     }

@@ -28,8 +28,6 @@ class CreatAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCreatAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         mAuth = FirebaseAuth.getInstance()
 
         binding.crButton.setOnClickListener {
