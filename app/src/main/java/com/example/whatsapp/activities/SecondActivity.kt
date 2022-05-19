@@ -1,4 +1,4 @@
-package com.example.whatsapp
+package com.example.whatsapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         bindig.creataccountBtn.setOnClickListener{
-            startActivity(Intent(this,CreatAccountActivity::class.java))
+            startActivity(Intent(this, CreatAccountActivity::class.java))
         }
 
         mAuth = FirebaseAuth.getInstance()
@@ -33,7 +33,7 @@ class SecondActivity : AppCompatActivity() {
             firebaseAuth: FirebaseAuth ->
             user = firebaseAuth.currentUser
             if (user!= null){
-                val dashbordIntent = Intent(this,DashBoradActivity::class.java)
+                val dashbordIntent = Intent(this, DashBoradActivity::class.java)
                 val userName = user!!.email!!.split("@")[0]
                 dashbordIntent.putExtra("name" , userName)
                 startActivity(dashbordIntent)

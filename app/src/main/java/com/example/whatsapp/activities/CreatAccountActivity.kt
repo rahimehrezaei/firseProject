@@ -1,22 +1,18 @@
-package com.example.whatsapp
+package com.example.whatsapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View.inflate
 import android.widget.Toast
 import com.example.whatsapp.databinding.ActivityCreatAccountBinding
 import com.example.whatsapp.databinding.ActivityCreatAccountBinding.inflate
-import com.example.whatsapp.databinding.ActivityMainBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlin.math.log
 
 class CreatAccountActivity : AppCompatActivity() {
 
@@ -66,7 +62,7 @@ class CreatAccountActivity : AppCompatActivity() {
                     mDataBase!!.setValue(userObject).addOnCompleteListener {
                         task: Task<Void> ->
                         if (task.isSuccessful){
-                            var dashboradIntent = Intent(this,DashBoradActivity::class.java)
+                            var dashboradIntent = Intent(this, DashBoradActivity::class.java)
                             dashboradIntent.putExtra("name",displayName)
                             startActivity(dashboradIntent)
                             finish()

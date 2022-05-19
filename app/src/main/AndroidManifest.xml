@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatsApp">
         <activity
-            android:name=".DashBoradActivity"
+            android:name=".activities.DashBoradActivity"
             android:exported="false" />
         <activity
-            android:name=".CreatAccountActivity"
+            android:name=".activities.CreatAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".activities.SecondActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

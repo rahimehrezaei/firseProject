@@ -1,11 +1,10 @@
-package com.example.whatsapp
+package com.example.whatsapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
-import com.example.whatsapp.databinding.ActivityCreatAccountBinding
 import com.example.whatsapp.databinding.ActivityLoginBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -40,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 task: Task<AuthResult> ->
                 if (task.isSuccessful){
-                    var dashbordIntent = Intent(this,DashBoradActivity::class.java)
+                    var dashbordIntent = Intent(this, DashBoradActivity::class.java)
                     var userName = email.split("@")[0]
                     dashbordIntent.putExtra("name" , userName)
                     startActivity(dashbordIntent)
