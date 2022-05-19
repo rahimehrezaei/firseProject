@@ -13,8 +13,6 @@ class SecondActivity : AppCompatActivity() {
     var user : FirebaseUser? = null
     var mAuthListener : FirebaseAuth.AuthStateListener? = null
 
-
-
     private lateinit var bindig : ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         bindig = ActivitySecondBinding.inflate(layoutInflater)
@@ -43,6 +41,7 @@ class SecondActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Not Logged In",Toast.LENGTH_LONG).show()
             }
+
         }
     }
 
