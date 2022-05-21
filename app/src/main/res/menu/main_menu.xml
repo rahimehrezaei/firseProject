@@ -6,6 +6,6 @@
         android:id="@+id/logoutId"
         android:title="@string/LogOutTitle" />
     <item
-        android:id="@+id/settingsId"
+        android:id="@+id/setId"
         android:title="@string/Settings" />
 </menu>
