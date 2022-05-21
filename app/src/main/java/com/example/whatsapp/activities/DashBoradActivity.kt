@@ -55,10 +55,7 @@ class DashBoradActivity : AppCompatActivity() {
             finish()
         }
         if (item.itemId == R.id.settingsId){
-            // go to user setting
-            FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this ,  SettingActivity::class.java))
-            finish()
+            startActivity(Intent(this ,  SettingsActivity::class.java))
         }
 
         return true
