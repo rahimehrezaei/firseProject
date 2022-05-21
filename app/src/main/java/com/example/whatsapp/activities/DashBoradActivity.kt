@@ -1,11 +1,17 @@
 package com.example.whatsapp.activities
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import com.example.whatsapp.MainActivity
+import com.example.whatsapp.R
 import com.example.whatsapp.adapters.SectionPagerAdapter
 import com.example.whatsapp.databinding.ActivityDashBoradBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class DashBoradActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashBoradBinding
@@ -28,5 +34,33 @@ class DashBoradActivity : AppCompatActivity() {
             val userName = intent!!.extras!!.getString("name")
             Toast.makeText(this, userName, Toast.LENGTH_LONG).show()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+
+
+        menuInflater.inflate(R.menu.main_menu , menu)
+
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.logoutId){
+            // log out user command
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this , SecondActivity::class.java))
+            finish()
+        }
+        if (item.itemId == R.id.settingsId){
+            // go to user setting
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this ,  SettingActivity::class.java))
+            finish()
+        }
+
+        return true
     }
 }
