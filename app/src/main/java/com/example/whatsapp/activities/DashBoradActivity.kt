@@ -1,5 +1,6 @@
 package com.example.whatsapp.activities
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,17 +14,19 @@ class DashBoradActivity : AppCompatActivity() {
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
 
-        var sectionAdapter : SectionPagerAdapter ?= null
+        var sectionAdapter: SectionPagerAdapter? = null
 
         supportActionBar!!.title = "Dashboard"
 
         sectionAdapter = SectionPagerAdapter(supportFragmentManager)
         binding.dashboardViewPageId.adapter = sectionAdapter
         binding.mainTabs.setupWithViewPager(binding.dashboardViewPageId)
+        binding.mainTabs.setTabTextColors(Color.WHITE, Color.GREEN)
 
-        if (intent.extras != null){
-            var userName = intent!!.extras!!.getString("name")
-            Toast.makeText(this,userName,Toast.LENGTH_LONG).show()
+
+        if (intent.extras != null) {
+            val userName = intent!!.extras!!.getString("name")
+            Toast.makeText(this, userName, Toast.LENGTH_LONG).show()
         }
     }
 }

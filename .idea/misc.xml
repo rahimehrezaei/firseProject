@@ -21,6 +21,9 @@
         <entry key="..\:/IJ/WhatsApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/IJ/WhatsApp/app/src/main/res/layout/activity_main.xml" value="0.268" />
         <entry key="..\:/IJ/WhatsApp/app/src/main/res/layout/activity_second.xml" value="0.268" />
+        <entry key="..\:/IJ/WhatsApp/app/src/main/res/layout/fragment_chats_fragments.xml" value="0.10643115942028986" />
+        <entry key="..\:/IJ/WhatsApp/app/src/main/res/layout/fragment_users_fragments.xml" value="0.268" />
+        <entry key="..\:/IJ/WhatsApp/app/src/main/res/menu/main_menu.xml" value="0.24270833333333333" />
         <entry key="..\:/IJ/WhatsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
       </map>
     </option>

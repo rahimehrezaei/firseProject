@@ -9,37 +9,36 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class SecondActivity : AppCompatActivity() {
-    var mAuth : FirebaseAuth? = null
-    var user : FirebaseUser? = null
-    var mAuthListener : FirebaseAuth.AuthStateListener? = null
+    var mAuth: FirebaseAuth? = null
+    var user: FirebaseUser? = null
+    var mAuthListener: FirebaseAuth.AuthStateListener? = null
 
-    private lateinit var bindig : ActivitySecondBinding
+    private lateinit var bindig: ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         bindig = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(bindig.root)
         super.onCreate(savedInstanceState)
 
-        bindig.haveaccountBtn.setOnClickListener{
-            startActivity(Intent(this , LoginActivity::class.java))
+        bindig.haveaccountBtn.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        bindig.creataccountBtn.setOnClickListener{
+        bindig.creataccountBtn.setOnClickListener {
             startActivity(Intent(this, CreatAccountActivity::class.java))
         }
 
         mAuth = FirebaseAuth.getInstance()
 
-        mAuthListener = FirebaseAuth.AuthStateListener{
-            firebaseAuth: FirebaseAuth ->
+        mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth: FirebaseAuth ->
             user = firebaseAuth.currentUser
-            if (user!= null){
+            if (user != null) {
                 val dashbordIntent = Intent(this, DashBoradActivity::class.java)
                 val userName = user!!.email!!.split("@")[0]
-                dashbordIntent.putExtra("name" , userName)
+                dashbordIntent.putExtra("name", userName)
                 startActivity(dashbordIntent)
                 finish()
-            }else{
-                Toast.makeText(this, "Not Logged In",Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Not Logged In", Toast.LENGTH_LONG).show()
             }
 
         }
@@ -47,7 +46,7 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        mAuth!!.addAuthStateListener (mAuthListener!!)
+        mAuth!!.addAuthStateListener(mAuthListener!!)
     }
 
     override fun onStop() {
