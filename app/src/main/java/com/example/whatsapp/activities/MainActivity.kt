@@ -1,31 +1,25 @@
 package com.example.whatsapp.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.whatsapp.databinding.ActivitySecondBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.whatsapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 
-class SecondActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     var mAuth: FirebaseAuth? = null
     var user: FirebaseUser? = null
     var mAuthListener: FirebaseAuth.AuthStateListener? = null
-
-    private lateinit var bindig: ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        bindig = ActivitySecondBinding.inflate(layoutInflater)
-        setContentView(bindig.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         super.onCreate(savedInstanceState)
-
-        bindig.haveaccountBtn.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
-        bindig.creataccountBtn.setOnClickListener {
-            startActivity(Intent(this, CreatAccountActivity::class.java))
-        }
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -42,7 +36,16 @@ class SecondActivity : AppCompatActivity() {
             }
 
         }
-    }
+
+        binding.haveaccountBtn.setOnClickListener {
+            startActivity(Intent(this, LogActivity::class.java))
+        }
+
+        binding.creataccountBtn.setOnClickListener {
+            startActivity(Intent(this, CrActivity::class.java))
+        }
+
+        }
 
     override fun onStart() {
         super.onStart()
@@ -55,6 +58,4 @@ class SecondActivity : AppCompatActivity() {
             mAuth!!.removeAuthStateListener(mAuthListener!!)
         }
     }
-
-
 }

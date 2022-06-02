@@ -37,7 +37,7 @@
         />
 
     <EditText
-        android:id="@+id/et_status"
+        android:id="@+id/statusUpdateInputId"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Status..."
@@ -51,12 +51,12 @@
         android:padding="15dp"
         />
     <Button
-        android:id="@+id/bt_status"
+        android:id="@+id/statusUpdateBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_status"
-        app:layout_constraintStart_toStartOf="@id/et_status"
-        app:layout_constraintEnd_toEndOf="@id/et_status"
+        app:layout_constraintTop_toBottomOf="@id/statusUpdateInputId"
+        app:layout_constraintStart_toStartOf="@id/statusUpdateInputId"
+        app:layout_constraintEnd_toEndOf="@id/statusUpdateInputId"
         app:layout_constraintBottom_toBottomOf="@id/tvShow"
         android:textColor="@color/gray_100"
         android:text="Change"

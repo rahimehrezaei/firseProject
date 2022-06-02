@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.whatsapp.MaintwoActivity
 import com.example.whatsapp.R
 import com.example.whatsapp.adapters.SectionPagerAdapter
 import com.example.whatsapp.databinding.ActivityDashBoradBinding
@@ -50,11 +51,11 @@ class DashBoradActivity : AppCompatActivity() {
 
         if (item.itemId == R.id.logoutId){
             FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this ,SecondActivity::class.java ))
+            startActivity(Intent(this ,MaintwoActivity::class.java ))
             finish()
         }
 
-        if (item.itemId == R.id.setId){
+        if (item.itemId == R.id.settId){
             startActivity(Intent(this , SettingActivity::class.java ))
 
         }

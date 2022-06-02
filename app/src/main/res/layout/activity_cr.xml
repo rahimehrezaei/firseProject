@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CrActivity">
+
+    <TextView
+        android:id="@+id/cardview_cr"
+        android:layout_width="330dp"
+        android:layout_height="400dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/logo_cr"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/chat_icon"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_cr"
+        app:layout_constraintStart_toStartOf="@+id/cardview_cr"
+        app:layout_constraintTop_toTopOf="@id/cardview_cr" />
+
+    <TextView
+        android:id="@+id/textView_cr"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:text="@string/creat_account"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="10sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_cr"
+        app:layout_constraintStart_toStartOf="@+id/cardview_cr"
+        app:layout_constraintTop_toBottomOf="@+id/logo_cr" />
+
+    <EditText
+        android:id="@+id/desplayName_cr"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/diplay_name"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:background="@drawable/bt_shape"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_cr"
+        app:layout_constraintStart_toStartOf="@+id/cardview_cr"
+        app:layout_constraintTop_toBottomOf="@id/textView_cr" />
+
+    <EditText
+        android:id="@+id/accountEmailInput_cr"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
+        android:background="@drawable/bt_shape"
+        android:padding="12dp"
+        android:hint="@string/login_input_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_cr"
+        app:layout_constraintStart_toStartOf="@+id/cardview_cr"
+        app:layout_constraintTop_toBottomOf="@id/desplayName_cr" />
+
+    <EditText
+        android:id="@+id/accountPasswordInput_cr"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password_input_hint"
+        android:inputType="number"
+        android:background="@drawable/bt_shape"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_cr"
+        app:layout_constraintStart_toStartOf="@+id/cardview_cr"
+        app:layout_constraintTop_toBottomOf="@id/accountEmailInput_cr" />
+
+
+    <Button
+        android:id="@+id/cr_button"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardview_cr"
+        app:layout_constraintTop_toBottomOf="@id/accountPasswordInput_cr"
+        app:layout_constraintStart_toStartOf="@id/cardview_cr"
+        app:layout_constraintEnd_toEndOf="@id/cardview_cr"
+        android:background="@drawable/bt_shape_2"
+        android:stateListAnimator="@drawable/state_list_animator_z"
+        android:text="@string/creat_new_account"
+        android:backgroundTint="@color/gray_500"
+        android:layout_marginBottom="20dp"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
