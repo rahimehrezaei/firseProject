@@ -14,8 +14,9 @@ class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
     var mDatabase: DatabaseReference? = null
     var mStorage: StorageReference? = null
-
     var currentUser: FirebaseUser? = null
+    var GALLERY_ID : Int = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,5 +48,16 @@ class SettingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.settingChangeImageId.setOnClickListener {
+            var galleryIntent = Intent()
+            galleryIntent.type = "image/*"
+            galleryIntent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(Intent.createChooser(galleryIntent,"choose image"),GALLERY_ID)
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
